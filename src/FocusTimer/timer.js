@@ -1,8 +1,11 @@
 import state from './state.js';
 import * as el from './elements.js';
 import { reset } from './actions.js';
+import { dingTimer } from './sounds.js';
 
 export function countDown() {
+	clearTimeout(state.countDownId)
+
 	if (!state.isRunning) {
 		return;
 	}
@@ -19,11 +22,12 @@ export function countDown() {
 
 	if (minutes < 0) {
 		reset();
+		dingTimer.play();
 		return;
 	}
 
 	updateDisplay(minutes, seconds);
-	setTimeout(() => countDown(), 1000);
+	state.countDownId = setTimeout(() => countDown(), 1000);
 }
 
 export function updateDisplay(minutes, seconds) {
