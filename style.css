@@ -83,7 +83,9 @@ body {
 }
 
 #timer {
-    font-size: 9.6rem;
+    /* font-size: 9.6rem; */
+
+    font-size: clamp(6.5rem, 4.286rem + 5.905vw, 9.6rem);
     font-family: var(--tt-main);
     font-weight: bold;
 
@@ -91,7 +93,13 @@ body {
 
 #controls {
     margin-top: 1.6rem;
-    padding: 2.2rem 4rem;
+
+    padding-top: clamp(1.2rem, 0.629rem + 1.524vw, 2rem);
+    padding-bottom: clamp(1.2rem, 0.629rem + 1.524vw, 2rem);
+
+    padding-left: clamp(2rem, 0.571rem + 3.81vw, 4rem);
+    padding-right: clamp(2rem, 0.571rem + 3.81vw, 4rem);
+
     gap: 1.6rem;
     background-color: var(--controls-bg-color);
     border-radius: 999rem;
@@ -105,7 +113,7 @@ button {
     cursor: pointer;
 
     /* font-size: 6.4rem; */
-    font-size: clamp(3rem, 1.214rem + 4.762vw, 5.5rem);
+    font-size: clamp(2.5rem, 1.786rem + 1.905vw, 3.5rem);
 }
 
 .secondary {
